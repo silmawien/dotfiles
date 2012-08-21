@@ -1,13 +1,5 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt autocd
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/mattias/.zshrc'
+# Modular approach inspired by ZH (github/holman)
+DOTFILES=~/.dotfiles
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Source any .zsh files in this repo *in alphabetic order*
+foreach f (${DOTFILES}/**/*.zsh(on)) source $f; end
