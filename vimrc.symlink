@@ -1,0 +1,46 @@
+"Pathogenic
+call pathogen#infect()
+syntax enable
+filetype plugin indent on
+
+"Solarized
+set background=dark
+colorscheme solarized
+set t_Co=16
+
+"Misc
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"Fuzzy file finder
+"nmap ,f :FufFileWithCurrentBufferDir<CR>
+"nmap ,b :FufBuffer<CR>
+"nmap ,t :FufTaggedFile<CR>
+
+"Cycle through buffers
+nnoremap <F1> :bprevious<CR>
+nnoremap <F2> :bnext<CR>
+
+"Tab completion for e.g. :help pat<TAB>
+set wildmenu
+
+"Show file pos in status bar
+set ruler
+
+"Show commands as they are typed
+set showcmd
+
+"Show line numbers
+"set number
+
+"Allow hiding of modified buffers
+set hidden
+
+"Testing area
+set nowrapscan
+set ignorecase
+set incsearch
+"set autoindent
+"set smartindent
+
