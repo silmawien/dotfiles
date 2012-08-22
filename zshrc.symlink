@@ -3,3 +3,6 @@ DOTFILES=~/.dotfiles
 
 # Source any .zsh files in this repo *in alphabetic order*
 foreach f (${DOTFILES}/**/*.zsh(on)) source $f; end
+
+# Note: PATH should really be set from .zshenv, or it will contain duplicates
+# in nested shells. Let's just not worry about it for now.
