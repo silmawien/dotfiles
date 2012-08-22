@@ -1,0 +1,7 @@
+if [ -z $1 ]; then
+    echo "Usage: goenv <virtualenv>\n"
+    ls -1 ${HOME}/sandbox/venv/environments
+    echo
+else
+    source ${HOME}/sandbox/venv/environments/${1}/bin/activate
+fi
