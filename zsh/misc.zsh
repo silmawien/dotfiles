@@ -9,3 +9,6 @@ alias ls="ls --color=auto"
 export CDPATH=".:${HOME}/sandbox"
 
 export EDITOR="vi"
+
+# stop ctrl-s from being eaten
+stty ixoff -ixon
