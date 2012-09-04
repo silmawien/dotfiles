@@ -44,4 +44,5 @@ set incsearch
 "set autoindent
 "set smartindent
 
+map <F5> :!make<CR>
 set mouse=a
