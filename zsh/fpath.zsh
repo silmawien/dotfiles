@@ -1,2 +1,2 @@
 fpath=(${DOTFILES}/zsh/functions $fpath)
-autoload -U /home/mattias/.dotfiles/zsh/functions/*(:t)
+autoload -U ${DOTFILES}/zsh/functions/*(:t)
