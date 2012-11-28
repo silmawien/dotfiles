@@ -37,12 +37,17 @@ set showcmd
 "Allow hiding of modified buffers
 set hidden
 
-"Testing area
+"Search is ignorecase, incremental, does not wrap
 set nowrapscan
 set ignorecase
 set incsearch
+
+"Testing area
+set softtabstop=4
+set shiftround
 "set autoindent
 "set smartindent
+set laststatus=2
 
 map <F5> :!make<CR>
 set mouse=a
