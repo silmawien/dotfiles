@@ -37,7 +37,7 @@ set softtabstop=4
 set shiftround
 set laststatus=2
 
-map <F5> :!make<CR>
+map <F5> :wa<CR>:!make<CR>
 set mouse=a
 
 let mapleader = ","
