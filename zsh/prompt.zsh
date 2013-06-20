@@ -3,53 +3,55 @@ autoload colors && colors
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
 git_branch() {
-  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+    echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 git_dirty() {
-  st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
-  if [[ $st == "" ]]
-  then
-echo ""
-  else
-if [[ $st == "nothing to commit (working directory clean)" ]]
+    st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
+    if [[ $st == "" ]]
     then
-echo "%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+        echo ""
     else
-echo "%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+        if [[ $st =~ "nothing to commit" ]]
+        then
+            echo "%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+        else
+            echo "%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+        fi
     fi
-fi
 }
 
 git_prompt_info () {
- ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
- echo "${ref#refs/heads/}"
+    ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
+    echo "${ref#refs/heads/}"
 }
 
 unpushed () {
-  /usr/bin/git cherry -v origin/$(git_branch) 2>/dev/null
+    /usr/bin/git cherry -v origin/$(git_branch) 2>/dev/null
 }
 
 need_push () {
-  if [[ $(unpushed) == "" ]]
-  then
-echo ""
-  else
-echo "%{$fg_bold[magenta]%}*%{$reset_color%}"
-  fi
+    if [[ $(unpushed) == "" ]]
+    then
+        echo ""
+    else
+        echo "%{$fg_bold[magenta]%}*%{$reset_color%}"
+    fi
 }
 
 directory_name(){
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+    echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
 error_code() {
-  echo "%(?..%{$bg_no_bold[yellow]%}%{$fg_no_bold[black]%} %? %{$reset_color%} )"
+    echo "%(?..%{$bg_no_bold[yellow]%}%{$fg_no_bold[black]%} %? %{$reset_color%} )"
 }
 
-export PROMPT=$'$(error_code)$(directory_name) %(!.#.›) '
+shlvl="%(2L.(%L).)"
+
+export PROMPT=$shlvl$'$(error_code)$(directory_name) %(!.#.›) '
 export RPROMPT='$(git_dirty)$(need_push)'
 
 precmd() {
-  #title "zsh" "%m" "%55<...<%~"
+    #title "zsh" "%m" "%55<...<%~"
 }
