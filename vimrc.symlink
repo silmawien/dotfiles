@@ -41,6 +41,7 @@ map <F5> :wa<CR>:!make<CR>
 "set mouse=a
 
 let mapleader = ","
+let maplocalleader = ","
 
 "Cycle through buffers
 nnoremap <leader>h :bprev<cr>
@@ -56,6 +57,18 @@ nnoremap <leader>ev :split $MYVIMRC<cr>G
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " }}}
+
+" Color column {{{
+highlight ColorColumn ctermbg=8
+augroup colorcolumn
+    au!
+    au InsertLeave * set colorcolumn&
+    au InsertEnter * set colorcolumn=+1
+augroup END
+" }}}
+
+set notimeout
+set ttimeout
 
 " Testing area
 
@@ -82,3 +95,11 @@ function! s:ToggleQuickFix()
     endif
 endfunction
 
+set noswapfile
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-q> <c-w>q
+
+highlight LineNr ctermbg=0 ctermfg=8
