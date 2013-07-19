@@ -70,6 +70,14 @@ augroup END
 set notimeout
 set ttimeout
 
+" Show highlight under cursor
+function! ShowHighlight()
+    for id in synstack(line("."), col("."))
+        echom synIDattr(id, "name")
+    endfor
+endfunction
+nnoremap <leader>sh :call ShowHighlight()<cr>
+
 " Testing area
 
 "nnoremap <leader>f :execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
@@ -103,3 +111,4 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-q> <c-w>q
 
 highlight LineNr ctermbg=0 ctermfg=8
+highlight Comment ctermfg=8
