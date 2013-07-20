@@ -48,8 +48,9 @@ error_code() {
 }
 
 shlvl="%(2L.(%L).)"
+jobno="%(1j.[%j].)"
 
-export PROMPT=$shlvl$'$(error_code)$(directory_name) %(!.#.›) '
+export PROMPT=${shlvl}${jobno}$'$(error_code)$(directory_name) %(!.#.›) '
 export RPROMPT='$(git_dirty)$(need_push)'
 
 precmd() {
