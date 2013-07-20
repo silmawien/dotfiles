@@ -6,5 +6,3 @@ setopt AUTO_CD
 setopt PROMPT_SUBST
 # save history line by line
 setopt INC_APPEND_HISTORY
-# share history
-setopt SHARE_HISTORY
