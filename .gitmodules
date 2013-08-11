@@ -7,6 +7,6 @@
 [submodule "vim.symlink/bundle/surround"]
 	path = vim.symlink/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "vim.symlink/bundle/vim-clojure-static"]
-	path = vim.symlink/bundle/vim-clojure-static
+[submodule "vim.symlink/bundle/clojure-static"]
+	path = vim.symlink/bundle/clojure-static
 	url = git://github.com/guns/vim-clojure-static.git
