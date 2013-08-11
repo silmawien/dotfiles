@@ -43,9 +43,11 @@ map <F5> :wa<CR>:!make<CR>
 let mapleader = ","
 let maplocalleader = ","
 
-"Cycle through buffers
-nnoremap <leader>h :bprev<cr>
-nnoremap <leader>l :bnext<cr>
+" Move by wrapped lines by default
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " Vimscript file settings {{{
 augroup filetype_vim
@@ -67,8 +69,12 @@ augroup colorcolumn
 augroup END
 " }}}
 
+" Timeout on key codes, no timeout for mappings.
 set notimeout
 set ttimeout
+" Remove most of the delay from <ESC> in insert/command mode,
+" but leave some room for arrow keys and other ^[-sequences to work.
+set timeoutlen=20
 
 " Show highlight under cursor
 function! ShowHighlight()
@@ -80,7 +86,6 @@ nnoremap <leader>sh :call ShowHighlight()<cr>
 
 " Testing area
 
-"nnoremap <leader>f :execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
 nnoremap <leader>j :cnext<cr>
 nnoremap <leader>k :cprevious<cr>
 inoremap jk <ESC>
@@ -88,6 +93,10 @@ nnoremap <leader>n :setlocal number!<cr>
 nnoremap <leader>N :setlocal relativenumber!<cr>
 
 nnoremap <leader>q :call <SID>ToggleQuickFix()<cr>
+
+" Create markdown link from current word
+nmap <leader>a ysiw]yiW%a[]<esc>/^$<cr>o<esc>pA: 
+vmap <leader>a S]y%%a[]<esc>/^$<cr>o<esc>pA: 
 
 let g:quickfix_is_open=0
 
@@ -109,6 +118,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-q> <c-w>q
+
+"Cycle through buffers
+nnoremap <c-h> :bprev<cr>
+nnoremap <c-l> :bnext<cr>
 
 highlight LineNr ctermbg=0 ctermfg=8
 highlight Comment ctermfg=8
