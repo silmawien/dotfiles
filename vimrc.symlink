@@ -125,3 +125,5 @@ nnoremap <c-l> :bnext<cr>
 
 highlight LineNr ctermbg=0 ctermfg=8
 highlight Comment ctermfg=8
+highlight link clojureParen NONE
+highlight link clojureSpecial Keyword
