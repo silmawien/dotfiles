@@ -35,7 +35,7 @@ need_push () {
     then
         echo ""
     else
-        echo "%{$fg_bold[magenta]%}*%{$reset_color%}"
+        echo "*"
     fi
 }
 

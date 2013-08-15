@@ -61,12 +61,14 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " }}}
 
 " Color column {{{
-highlight ColorColumn ctermbg=8
-augroup colorcolumn
-    au!
-    au InsertLeave * set colorcolumn&
-    au InsertEnter * set colorcolumn=+1
-augroup END
+if version > 702
+    highlight ColorColumn ctermbg=8
+    augroup colorcolumn
+        au!
+        au InsertLeave * set colorcolumn&
+        au InsertEnter * set colorcolumn=+1
+    augroup END
+endif
 " }}}
 
 " Timeout on key codes, no timeout for mappings.
@@ -127,3 +129,5 @@ highlight LineNr ctermbg=0 ctermfg=8
 highlight Comment ctermfg=8
 highlight link clojureParen NONE
 highlight link clojureSpecial Keyword
+
+set scrolloff=10
