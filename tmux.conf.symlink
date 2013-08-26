@@ -1,5 +1,7 @@
 set -g prefix C-a
 set -g default-terminal screen-256color
+# launch a non-login shell
+set -g default-command zsh
 
 bind-key k select-pane -t :.-
 bind-key j select-pane -t :.+
@@ -12,4 +14,4 @@ bind-key r source-file ~/.tmux.conf \; \
   display-message "source-file done"
 
 # Don't wait for escape sequences. Arrow keys seems to work regardless.
-set -s escape-time 0
+set -s escape-time 50
