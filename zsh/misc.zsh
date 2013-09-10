@@ -10,6 +10,6 @@ export CDPATH=".:${HOME}/sandbox"
 
 export EDITOR="vi"
 
-if [ $COLORTERM = "gnome-terminal" ]; then
+if [[ -z $TMUX && $COLORTERM == "gnome-terminal" ]]; then
     export TERM=xterm-256color
 fi
