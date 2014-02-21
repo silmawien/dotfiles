@@ -1,5 +1,5 @@
 function gpp() {
-    repo_path=$(git config --get remote.origin.url | sed 's/^.*review.sonyericsson.net//')
+    repo_path=$(git config --get remote.origin.url | sed -E 's/^.*review.sonyericsson.net(:\d+)?//')
     if [[ -n "$repo_path" ]]; then
         git push ssh://mattias.niklewski@review.sonyericsson.net:29418$repo_path $@
     else
