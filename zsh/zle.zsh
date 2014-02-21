@@ -1,5 +1,5 @@
 # stop ctrl-s and ctrl-q from being eaten
-stty -ixoff -ixon
+stty -ixon
 
 # PuTTY binds
 # Use 'zkbd' to figure out what sequence a key generates
