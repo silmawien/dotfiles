@@ -49,8 +49,8 @@ error_code() {
 
 jobno="%(1j.[%j].)"
 
-export PROMPT=${jobno}$'$(error_code)$(directory_name) %(!.#.›) '
-export RPROMPT='$(git_dirty)$(need_push)'
+PROMPT=${jobno}$'$(error_code)$(directory_name) %(!.#.›) '
+RPROMPT='$(git_dirty)$(need_push)'
 
 precmd() {
     #title "zsh" "%m" "%55<...<%~"

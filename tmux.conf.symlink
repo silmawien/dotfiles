@@ -3,6 +3,8 @@ set -g default-terminal screen-256color
 # launch a non-login shell
 set -g default-command zsh
 
+set -g status-style "bg=blue"
+
 bind-key k select-pane -t :.-
 bind-key j select-pane -t :.+
 

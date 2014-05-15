@@ -6,7 +6,7 @@ fi
 eval "$(dircolors -b)"
 alias ls="ls --color=auto"
 
-export CDPATH=".:${HOME}/sandbox"
+CDPATH=".:${HOME}/sandbox"
 
 export EDITOR="vi"
 
