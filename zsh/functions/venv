@@ -1,5 +1,5 @@
 if [ -z $1 ]; then
-    echo "Usage: goenv <virtualenv>\n"
+    echo "Usage: venv <virtualenv>\n"
     ls -1 ${HOME}/sandbox/venv/environments
     echo
 else
