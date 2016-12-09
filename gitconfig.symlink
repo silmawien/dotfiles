@@ -19,3 +19,5 @@
 [user]
 	name = Mattias Niklewski
 	email = mattias@niklewski.com
+[push]
+	default = simple
