@@ -1,7 +1,7 @@
 if [ -z $1 ]; then
     echo "Usage: venv <virtualenv>\n"
-    ls -1 ${HOME}/sandbox/venv/environments
+    ls -1 ${HOME}/sandbox/venv
     echo
 else
-    source ${HOME}/sandbox/venv/environments/${1}/bin/activate
+    source ${HOME}/sandbox/venv/${1}/bin/activate
 fi
