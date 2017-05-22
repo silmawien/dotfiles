@@ -9,10 +9,12 @@ git_branch() {
 git_branch_maybe() {
     st=$(/usr/bin/git status -s 2>/dev/null)
     if [[ $? -eq 0 ]]; then
+        echo -n "%{$fg_bold[grey]%}"
         if [[ "$st" != "" ]]; then
             echo -n "*"
         fi
-        echo "$(git_prompt_info)"
+        echo -n "$(git_prompt_info)"
+        echo "%{$reset_color%}"
     else
         echo ""
     fi
