@@ -17,3 +17,6 @@ bind-key r source-file ~/.tmux.conf \; \
 
 # Don't wait for escape sequences. Arrow keys seems to work regardless.
 set -s escape-time 50
+
+# Increase history buffer size
+set-option history-limit 20000
