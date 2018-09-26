@@ -1,6 +1,6 @@
 // As of Ubuntu 16.04:
 //
-// 1. copy this file to /usr/share/X11/xkb/rules/ussv
+// 1. copy this file to /usr/share/X11/xkb/symbols/ussv
 // 2. add this section to <layoutList> in /usr/share/X11/xkb/rules/evdev.xml
 //
 //    <layout>
