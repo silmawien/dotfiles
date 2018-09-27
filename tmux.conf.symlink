@@ -20,3 +20,7 @@ set -s escape-time 50
 
 # Increase history buffer size
 set-option -g history-limit 20000
+
+# split with current directory
+bind % split-window -h -c '#{pane_current_path}'
+bind '"' split-window -v -c '#{pane_current_path}'
