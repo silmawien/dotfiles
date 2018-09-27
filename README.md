@@ -7,7 +7,7 @@ Config files and stuff.
 3. clone this repo and source install.sh
 4. build tmux
     1. git clone https://github.com/tmux/tmux.git
-    2. apt install [automake libevent-dev libncurses5-dev]
+    2. apt install [automake pkg-config libevent-dev libncurses5-dev]
     3. sh automake.sh
     4. ./configure && make
 

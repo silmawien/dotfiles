@@ -19,4 +19,4 @@ bind-key r source-file ~/.tmux.conf \; \
 set -s escape-time 50
 
 # Increase history buffer size
-set-option history-limit 20000
+set-option -g history-limit 20000
