@@ -16,6 +16,13 @@
 //    </layout>
 //
 // 3. reboot and select the layout
+//
+// As of Ubuntu 18
+//
+// The custom layout does not appear in Gnome's Region & Language selector
+// but can be selected manually:
+//
+// $ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ussv')]"
 
 default  partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
