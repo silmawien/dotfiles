@@ -20,4 +20,4 @@
 	name = Mattias Niklewski
 	email = mattias@niklewski.com
 [push]
-	default = matching
+	default = simple
