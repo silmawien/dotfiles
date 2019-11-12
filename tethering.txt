@@ -1,0 +1,20 @@
+Tested on Ubuntu 18.04 server
+
+From
+https://askubuntu.com/questions/138472/how-do-i-connect-to-a-wpa-wifi-network-using-the-command-line
+
+1. Set up /etc/wpa_supplicant.conf to contain
+network={
+  ssid="c083-lte"
+  psk="aaaaaaaq"
+} 
+
+2. remove wlp2s0 from netplan
+  $ sudo vim /etc/netplan/10-...
+
+2. run wpa_supplicant
+  $ sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant.conf -D wext -dd
+
+3. run dhclient
+  $ sudo dhclient wlp2s0
+
