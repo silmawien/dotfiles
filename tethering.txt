@@ -12,9 +12,15 @@ network={
 2. remove wlp2s0 from netplan
   $ sudo vim /etc/netplan/10-...
 
-2. run wpa_supplicant
+3. comment out the wlp2s0 subnet in /etc/dhcp/dhcpd.conf
+  $ sudo service isc-dhcp-server restart
+
+4. stop hostapd
+  $ sudo service hostapd stop
+
+5. run wpa_supplicant
   $ sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant.conf -D wext -dd
 
-3. run dhclient
+6. run dhclient
   $ sudo dhclient wlp2s0
 
