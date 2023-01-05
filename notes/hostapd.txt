@@ -8,3 +8,6 @@ Tested on Ubuntu 22.04.01 LTS.
 - Add startup delay to reduce the odds that isc-dhcp-server starts up before the wifi interface has an IP
   $ sudo vim /lib/systemd/system/isc-dhcp-server.service
   + ExecPreStart:sleep 3
+  $ sudo systemctl daemon-reload
+If not used, the ipv6 version - isc-dhcpd-server6.service - should be disabled to avoid syslog warning.
+  $ sudo systemctl disable isc-dhcp-server6
