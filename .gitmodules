@@ -1,9 +1,9 @@
 [submodule "vim.symlink/bundle/ctrlp"]
 	path = vim.symlink/bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim.symlink/bundle/fugitive"]
 	path = vim.symlink/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim.symlink/bundle/surround"]
 	path = vim.symlink/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git

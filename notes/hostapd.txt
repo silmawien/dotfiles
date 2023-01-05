@@ -1,0 +1,10 @@
+Systemd config for hostapd, isc-dhcp-server, netplan
+Tested on Ubuntu 22.04.01 LTS.
+
+- Create and test hostapd.conf manually
+- Unmask and enable hostapd
+  $ sudo systemctl {unmask,enable} hostapd.service
+- Set wifi interface as Optional=true in netplan config (otherwise there's a 120 sec timeout during boot)
+- Add startup delay to reduce the odds that isc-dhcp-server starts up before the wifi interface has an IP
+  $ sudo vim /lib/systemd/system/isc-dhcp-server.service
+  + ExecPreStart:sleep 3
